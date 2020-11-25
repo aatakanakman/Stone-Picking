@@ -7,13 +7,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , StoneDelegate{
+    
+    
+    var gameEngine : GameEngine = GameEngine()
 
+    @IBOutlet weak var boardView: BoardView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        boardView.stoneDelegate = self
+       
+        gameEngine.initializeGame()
+        boardView.shadowStones = gameEngine.stones
+        boardView.setNeedsDisplay()
+
     }
 
+    func moveStone(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
+        gameEngine.moveStone(fromCol: fromCol, fromRow: fromRow, toCol: toCol, toRow: toRow)
+        boardView.shadowStones = gameEngine.stones
+        boardView.setNeedsDisplay()
+    }
+    
+    func stoneAt(col: Int, row: Int) -> Stone? {
+        return gameEngine.stoneAt(col: col, row: row)
+    }
 
 }
 
