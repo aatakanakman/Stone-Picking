@@ -11,7 +11,7 @@ struct Stone : Hashable{
     let col : Int
     let row : Int
     let imageName : String
-    let isGreen : Bool  
-    
+    let isGreen : Bool
+    let isBarrier : Bool
 }
 

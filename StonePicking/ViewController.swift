@@ -19,9 +19,10 @@ class ViewController: UIViewController , StoneDelegate{
         
         boardView.stoneDelegate = self
        
-        gameEngine.initializeGame()
-        boardView.shadowStones = gameEngine.stones
-        boardView.setNeedsDisplay()
+        
+        
+        
+        
 
     }
 
@@ -34,6 +35,13 @@ class ViewController: UIViewController , StoneDelegate{
     func stoneAt(col: Int, row: Int) -> Stone? {
         return gameEngine.stoneAt(col: col, row: row)
     }
-
+    
+    
+    @IBAction func resetBtn(_ sender: Any) {
+        gameEngine.initializeGame()
+        boardView.shadowStones = gameEngine.stones
+        boardView.setNeedsDisplay()
+    }
+    
 }
 

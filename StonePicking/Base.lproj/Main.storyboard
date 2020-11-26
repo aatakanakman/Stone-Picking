@@ -23,11 +23,22 @@
                                     <constraint firstAttribute="width" secondItem="mwI-Zs-mt9" secondAttribute="height" multiplier="1:1" id="f24-ud-Qhe"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtz-tQ-kmy">
+                                <rect key="frame" x="20" y="782" width="728" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pW6-fl-IqM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Rtz-tQ-kmy" firstAttribute="top" secondItem="mwI-Zs-mt9" secondAttribute="bottom" constant="34" id="2gq-9G-Ymd"/>
+                            <constraint firstItem="Rtz-tQ-kmy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6to-m7-XVC"/>
                             <constraint firstItem="mwI-Zs-mt9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Maa-qi-z7u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rtz-tQ-kmy" secondAttribute="trailing" constant="20" id="UFs-iE-Vav"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mwI-Zs-mt9" secondAttribute="trailing" constant="20" id="jQ5-10-Cf4"/>
                             <constraint firstItem="mwI-Zs-mt9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sT2-aR-ywc"/>
                         </constraints>

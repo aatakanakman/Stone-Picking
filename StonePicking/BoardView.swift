@@ -21,8 +21,8 @@ class BoardView: UIView {
     var shadowStones : Set<Stone> = Set<Stone>()
     var stoneDelegate : StoneDelegate? = nil
     
-    var fromCol : Int = -10000
-    var fromRow : Int = -10000
+    var fromCol : Int? = nil
+    var fromRow : Int? = nil
     
     var movingImage : UIImage? = nil
     var movingStoneX : CGFloat = -1
@@ -45,10 +45,12 @@ class BoardView: UIView {
         let fingerLocation = first.location(in: self)
         //print(fingerLocation)
         
+        
+        
         fromCol = Int((fingerLocation.x - originX) / cellSide)
         fromRow = Int((fingerLocation.y - originY) / cellSide)
         
-        if let movingStone = stoneDelegate?.stoneAt(col: fromCol, row: fromRow){
+        if let fromCol = fromCol , let fromRow = fromRow, let movingStone = stoneDelegate?.stoneAt(col: fromCol, row: fromRow){
             movingImage = UIImage(named: movingStone.imageName)
         }
     }
@@ -58,7 +60,9 @@ class BoardView: UIView {
         let fingerLocation = first.location(in: self)
         movingStoneX = fingerLocation.x
         movingStoneY = fingerLocation.y
+        //print(movingStoneX,movingStoneY)
         setNeedsDisplay()
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -66,25 +70,39 @@ class BoardView: UIView {
         let fingerLocation = first.location(in: self)
         //print(fingerLocation)
         
+        
         let toCol: Int = Int((fingerLocation.x - originX) / cellSide)
         let toRow: Int = Int((fingerLocation.y - originY) / cellSide)
         
+        if (abs(toCol - fromCol!) > abs(-1) || abs(toRow - fromRow!) > abs(-1) )||(toCol - fromCol! != 0  && toRow - fromRow! != 0 ) {
+            fromCol = nil
+            fromRow = nil
+        }
         
-        stoneDelegate?.moveStone(fromCol: fromCol , fromRow: fromRow, toCol: toCol, toRow: toRow)
+        print(toCol,toRow)
         
+        if let  fromCol = fromCol , let fromRow = fromRow, fromCol != toCol || fromRow != toRow {
+            stoneDelegate?.moveStone(fromCol: fromCol , fromRow: fromRow, toCol: toCol, toRow: toRow)
+        }
         movingImage = nil
+        fromRow = nil
+        fromCol = nil
         setNeedsDisplay()
     }
     
     func drawStone(){
-        for stone in shadowStones  {
+        
+        for stone in shadowStones { //where fromCol != stone.col || fromRow != stone.col  {
+            
             if fromCol == stone.col && fromRow == stone.row {
                 continue
             }
+            
             let stoneImage = UIImage(named: stone.imageName)
             stoneImage?.draw(in: CGRect(x: originX + CGFloat(stone.col) * cellSide, y: originY + CGFloat(stone.row) * cellSide, width: cellSide, height: cellSide))
         }
         movingImage?.draw(in: CGRect(x: movingStoneX - cellSide/2, y: movingStoneY - cellSide/2, width: cellSide, height: cellSide))
+        
         
     }
     
