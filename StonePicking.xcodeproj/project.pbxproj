@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D12BD64257959AA006EFEAA /* mainStone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D12BD63257959AA006EFEAA /* mainStone.swift */; };
 		6D20D64F256EAC65004C5853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D20D64E256EAC65004C5853 /* AppDelegate.swift */; };
 		6D20D651256EAC65004C5853 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D20D650256EAC65004C5853 /* SceneDelegate.swift */; };
 		6D20D653256EAC65004C5853 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D20D652256EAC65004C5853 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D12BD63257959AA006EFEAA /* mainStone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainStone.swift; sourceTree = "<group>"; };
 		6D20D64B256EAC65004C5853 /* StonePicking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StonePicking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D20D64E256EAC65004C5853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D20D650256EAC65004C5853 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				6D20D65C256EAC68004C5853 /* Info.plist */,
 				6D20D663256EAC9B004C5853 /* BoardView.swift */,
 				6D20D666256ECB80004C5853 /* Stone.swift */,
+				6D12BD63257959AA006EFEAA /* mainStone.swift */,
 				6D20D669256ECC35004C5853 /* GameEngine.swift */,
 			);
 			path = StonePicking;
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D12BD64257959AA006EFEAA /* mainStone.swift in Sources */,
 				6D20D667256ECB80004C5853 /* Stone.swift in Sources */,
 				6D20D66A256ECC35004C5853 /* GameEngine.swift in Sources */,
 				6D20D653256EAC65004C5853 /* ViewController.swift in Sources */,

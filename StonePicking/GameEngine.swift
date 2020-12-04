@@ -31,14 +31,29 @@ struct GameEngine  {
     var randCol6 = Int.random(in: 0..<8)
     var randRow6 = Int.random(in: 0..<8)
     
-    var randCol7 = 1//Int.random(in: 0..<8)
-    var randRow7 = 8//Int.random(in: 0..<8)
+    var randCol15 = Int.random(in: 0..<8)
+    var randRow15 = Int.random(in: 0..<8)
     
-    var randCol8 = 2//Int.random(in: 0..<8)
-    var randRow8 = 8//Int.random(in: 0..<8)
+    var randCol16 = Int.random(in: 0..<8)
+    var randRow16 = Int.random(in: 0..<8)
+
+    var randCol17 = Int.random(in: 0..<8)
+    var randRow17 = Int.random(in: 0..<8)
+
+    var randCol18 = Int.random(in: 0..<8)
+    var randRow18 = Int.random(in: 0..<8)
+
+    var randCol19 = Int.random(in: 0..<8)
+    var randRow19 = Int.random(in: 0..<8)
     
-    var randCol9 = 3//Int.random(in: 0..<8)
-    var randRow9 = 8//Int.random(in: 0..<8)
+    var randCol7 = Int.random(in: 0..<8)
+    var randRow7 = Int.random(in: 0..<8)
+    
+    var randCol8 = Int.random(in: 0..<8)
+    var randRow8 = Int.random(in: 0..<8)
+    
+    var randCol9 = Int.random(in: 0..<8)
+    var randRow9 = Int.random(in: 0..<8)
     
     var randCol10 = 4//Int.random(in: 0..<8)
     var randRow10 = 8//Int.random(in: 0..<8)
@@ -57,7 +72,7 @@ struct GameEngine  {
     
 
     
-    
+    var scoree : Int = 0
     
     var stones:  Set<Stone> = Set<Stone>()
     
@@ -77,22 +92,34 @@ struct GameEngine  {
             
         }
         
+        
         if let barrier = stoneAt(col: fromRow, row: fromCol){
             if barrier.isBarrier == true{
                
             }
         }
         if let target = stoneAt(col: toCol, row: toRow){
-            if target.isGreen == candidate.isGreen {
-                return
+            if target.isGreen != candidate.isGreen {
+                stones.remove(candidate)
+                scoree += 1
+                
             }
-            stones.remove(candidate)
+            return
         }
         
         stones.remove(candidate)
         stones.insert(Stone(col: toCol, row: toRow, imageName: candidate.imageName, isGreen: candidate.isGreen, isBarrier: candidate.isBarrier))
         
     }
+    
+    
+    func score() -> Int{
+        return scoree
+    }
+    
+    
+    
+    
     
     func canMoveStone(fromCol : Int , fromRow : Int , toCol : Int , toRow : Int) -> Bool {
         if fromCol == toCol && fromRow == toRow {
@@ -117,7 +144,7 @@ struct GameEngine  {
         stones.removeAll()
         
         if randCol == randCol && randCol == randCol1 &&  randCol == randCol3 &&  randCol == randCol4
-            &&  randCol == randCol5 &&  randCol == randCol6 && randRow == randRow1 && randRow == randRow2 && randRow == randRow3 && randRow == randRow4 && randRow == randRow5 && randRow == randRow6 {
+            &&  randCol == randCol5 &&  randCol == randCol6 && randRow == randRow1 && randRow == randRow2 && randRow == randRow3 && randRow == randRow4 && randRow == randRow5 && randRow == randRow6 &&  randRow == randCol5 {
             
             
             
@@ -141,6 +168,11 @@ struct GameEngine  {
             
             randCol6 = Int.random(in: 0..<8)
             randRow6 = Int.random(in: 0..<8)
+            
+            randCol15 = Int.random(in: 0..<8)
+            randRow15 = Int.random(in: 0..<8)
+            
+            
             
 //            randCol7 = Int.random(in: 0..<8)
 //            randRow7 = Int.random(in: 0..<8)
@@ -174,6 +206,7 @@ struct GameEngine  {
             stones.insert(Stone(col: randCol4, row: randRow4, imageName: "stone", isGreen: true, isBarrier: false))
             stones.insert(Stone(col: randCol5, row: randRow5, imageName: "stone", isGreen: true, isBarrier: false))
             stones.insert(Stone(col: randCol6, row: randRow6, imageName: "stone", isGreen: true, isBarrier: false))
+            stones.insert(Stone(col: randCol15, row: randRow15, imageName: "stone", isGreen: true, isBarrier: false))
             
             stones.insert(Stone(col: randCol7, row: randRow7, imageName: "stone2", isGreen: true, isBarrier: true))
             stones.insert(Stone(col: randCol8, row: randRow8, imageName: "stone2", isGreen: true, isBarrier: true))
@@ -185,4 +218,102 @@ struct GameEngine  {
             stones.insert(Stone(col: randCol14, row: randRow14, imageName: "stone2", isGreen: true, isBarrier: true))
         }
     }
-}
+    
+    mutating func initilaze2Game(){
+        
+            
+        
+            stones.removeAll()
+            
+            if randCol == randCol && randCol == randCol1 &&  randCol == randCol3 &&  randCol == randCol4
+                &&  randCol == randCol5 &&  randCol == randCol6 && randRow == randRow1 && randRow == randRow2 && randRow == randRow3 && randRow == randRow4 && randRow == randRow5 && randRow == randRow6 && randRow == randRow15 && randRow == randRow16 && randRow == randRow17 && randRow == randRow18 && randRow == randRow19 {
+                
+                
+                
+                randCol = Int.random(in: 0..<8)
+                randRow = Int.random(in: 0..<8)
+            
+                randCol1 = Int.random(in: 0..<8)
+                randRow1 = Int.random(in: 0..<8)
+                
+                randCol2 = Int.random(in: 0..<8)
+                randRow2 = Int.random(in: 0..<8)
+                
+                randCol3 = Int.random(in: 0..<8)
+                randRow3 = Int.random(in: 0..<8)
+                
+                randCol4 = Int.random(in: 0..<8)
+                randRow4 = Int.random(in: 0..<8)
+                
+                randCol5 = Int.random(in: 0..<8)
+                randRow5 = Int.random(in: 0..<8)
+                
+                randCol6 = Int.random(in: 0..<8)
+                randRow6 = Int.random(in: 0..<8)
+                
+                randCol15 = Int.random(in: 0..<8)
+                randRow15 = Int.random(in: 0..<8)
+                
+//                randCol16 = Int.random(in: 0..<8)
+//                randRow16 = Int.random(in: 0..<8)
+//                
+//                randCol17 = Int.random(in: 0..<8)
+//                randRow17 = Int.random(in: 0..<8)
+//                
+//                randCol18 = Int.random(in: 0..<8)
+//                randRow18 = Int.random(in: 0..<8)
+//                
+//                randCol19 = Int.random(in: 0..<8)
+//                randRow19 = Int.random(in: 0..<8)
+                
+    //            randCol7 = Int.random(in: 0..<8)
+    //            randRow7 = Int.random(in: 0..<8)
+    //
+    //            randCol8 = Int.random(in: 0..<8)
+    //            randRow8 = Int.random(in: 0..<8)
+    //
+    //            randCol9 = Int.random(in: 0..<8)
+    //            randRow9 = Int.random(in: 0..<8)
+    //
+    //            randCol10 = Int.random(in: 0..<8)
+    //            randRow10 = Int.random(in: 0..<8)
+    //
+    //            randCol11 = Int.random(in: 0..<8)
+    //            randRow11 = Int.random(in: 0..<8)
+    //
+    //            randCol12 = Int.random(in: 0..<8)
+    //            randRow12 = Int.random(in: 0..<8)
+    //
+    //            randCol13 = Int.random(in: 0..<8)
+    //            randRow13 = Int.random(in: 0..<8)
+                
+
+                
+            }else {
+            
+                stones.insert(Stone(col: randCol, row: randRow, imageName: "mainStone", isGreen: false, isBarrier: false))
+                stones.insert(Stone(col: randCol1, row: randRow1, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol2, row: randRow2, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol3, row: randRow3, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol4, row: randRow4, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol5, row: randRow5, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol6, row: randRow6, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol15, row: randRow15, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol16, row: randRow16, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol17, row: randRow17, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol18, row: randRow18, imageName: "stone", isGreen: true, isBarrier: false))
+                stones.insert(Stone(col: randCol19, row: randRow19, imageName: "stone", isGreen: true, isBarrier: false))
+                
+                
+                stones.insert(Stone(col: randCol7, row: randRow7, imageName: "stone2", isGreen: true, isBarrier: true))
+                stones.insert(Stone(col: randCol8, row: randRow8, imageName: "stone2", isGreen: true, isBarrier: true))
+                stones.insert(Stone(col: randCol9, row: randRow9, imageName: "stone2", isGreen: true, isBarrier: true))
+                stones.insert(Stone(col: randCol10, row: randRow10, imageName: "stone2", isGreen: true, isBarrier: true))
+                stones.insert(Stone(col: randCol11, row: randRow11, imageName: "stone2", isGreen: true, isBarrier: true))
+                stones.insert(Stone(col: randCol12, row: randRow12, imageName: "stone2", isGreen: true, isBarrier: true))
+                stones.insert(Stone(col: randCol13, row: randRow13, imageName: "stone2", isGreen: true, isBarrier: true))
+                stones.insert(Stone(col: randCol14, row: randRow14, imageName: "stone2", isGreen: true, isBarrier: true))
+            }
+        }
+    }
+

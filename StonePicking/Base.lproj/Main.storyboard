@@ -19,32 +19,55 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwI-Zs-mt9" customClass="BoardView" customModule="StonePicking" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="728" height="728"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="mwI-Zs-mt9" secondAttribute="height" multiplier="1:1" id="f24-ud-Qhe"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtz-tQ-kmy">
                                 <rect key="frame" x="20" y="782" width="728" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Reset"/>
+                                <state key="normal" title="Level 1"/>
                                 <connections>
                                     <action selector="resetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pW6-fl-IqM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uj4-Cs-Nmh">
+                                <rect key="frame" x="20" y="831" width="728" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Level 2(Default)"/>
+                                <connections>
+                                    <action selector="level2Btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SBl-18-lr8"/>
+                                    <action selector="resetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c0C-SQ-hk5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dja-pM-xzE">
+                                <rect key="frame" x="147" y="902" width="460" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="pmZ-hg-mLk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Rtz-tQ-kmy" firstAttribute="top" secondItem="mwI-Zs-mt9" secondAttribute="bottom" constant="34" id="2gq-9G-Ymd"/>
-                            <constraint firstItem="Rtz-tQ-kmy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6to-m7-XVC"/>
-                            <constraint firstItem="mwI-Zs-mt9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Maa-qi-z7u"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rtz-tQ-kmy" secondAttribute="trailing" constant="20" id="UFs-iE-Vav"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mwI-Zs-mt9" secondAttribute="trailing" constant="20" id="jQ5-10-Cf4"/>
-                            <constraint firstItem="mwI-Zs-mt9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sT2-aR-ywc"/>
+                            <constraint firstItem="dja-pM-xzE" firstAttribute="top" secondItem="uj4-Cs-Nmh" secondAttribute="bottom" constant="30" id="3OS-ec-gOm"/>
+                            <constraint firstItem="Rtz-tQ-kmy" firstAttribute="leading" secondItem="uj4-Cs-Nmh" secondAttribute="leading" id="5ar-ZO-fUC"/>
+                            <constraint firstItem="uj4-Cs-Nmh" firstAttribute="top" secondItem="Rtz-tQ-kmy" secondAttribute="bottom" constant="8" symbolic="YES" id="82O-GD-xOj"/>
+                            <constraint firstItem="mwI-Zs-mt9" firstAttribute="trailing" secondItem="Rtz-tQ-kmy" secondAttribute="trailing" id="Czg-v0-eu9"/>
+                            <constraint firstItem="Rtz-tQ-kmy" firstAttribute="top" secondItem="mwI-Zs-mt9" secondAttribute="bottom" constant="34" id="Fz8-bK-dS1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dja-pM-xzE" secondAttribute="trailing" constant="161" id="QD0-NS-hhR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dja-pM-xzE" secondAttribute="bottom" constant="83" id="cx7-Rw-oiV"/>
+                            <constraint firstItem="dja-pM-xzE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="e6y-LF-CyJ"/>
+                            <constraint firstItem="mwI-Zs-mt9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gvc-V2-KOA"/>
+                            <constraint firstItem="mwI-Zs-mt9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lhD-nK-P29"/>
+                            <constraint firstItem="mwI-Zs-mt9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="rPo-7D-8r4"/>
+                            <constraint firstItem="mwI-Zs-mt9" firstAttribute="leading" secondItem="Rtz-tQ-kmy" secondAttribute="leading" id="vNQ-Gc-Kch"/>
+                            <constraint firstItem="Rtz-tQ-kmy" firstAttribute="trailing" secondItem="uj4-Cs-Nmh" secondAttribute="trailing" id="xFr-UO-n8P"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="boardView" destination="mwI-Zs-mt9" id="sBw-r2-cBT"/>
+                        <outlet property="rangeLabel" destination="dja-pM-xzE" id="Afy-82-Ily"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

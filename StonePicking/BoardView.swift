@@ -44,15 +44,14 @@ class BoardView: UIView {
         let first = touches.first!
         let fingerLocation = first.location(in: self)
         //print(fingerLocation)
-        
-        
-        
         fromCol = Int((fingerLocation.x - originX) / cellSide)
         fromRow = Int((fingerLocation.y - originY) / cellSide)
         
         if let fromCol = fromCol , let fromRow = fromRow, let movingStone = stoneDelegate?.stoneAt(col: fromCol, row: fromRow){
             movingImage = UIImage(named: movingStone.imageName)
         }
+        
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

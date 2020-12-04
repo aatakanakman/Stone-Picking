@@ -12,5 +12,6 @@ protocol StoneDelegate {
     
     func moveStone (fromCol : Int , fromRow: Int , toCol : Int , toRow: Int)
     func stoneAt(col : Int , row : Int) -> Stone?
+    func leftRange(mainCol : Int , mainRow : Int , fromCol : Int , fromRow : Int)
     
 }
